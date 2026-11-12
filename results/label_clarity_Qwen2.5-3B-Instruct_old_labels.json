@@ -1,0 +1,35 @@
+{
+  "probe": "notebook 06 improved probe (layers 18-36 averaged, LR C=0.01, trained on labels with margin >= 0.05)",
+  "protocol": "grouped 5-fold CV on train+val, one round; accuracy at p > 0.5; scored against the old embedding labels",
+  "by_label_margin": {
+    "(-0.001, 0.02]": {
+      "answers": 91.0,
+      "cv_accuracy": 0.5494505494505495,
+      "cv_auroc": 0.5290697674418605
+    },
+    "(0.02, 0.05]": {
+      "answers": 87.0,
+      "cv_accuracy": 0.5862068965517241,
+      "cv_auroc": 0.590455049944506
+    },
+    "(0.05, 0.1]": {
+      "answers": 85.0,
+      "cv_accuracy": 0.6941176470588235,
+      "cv_auroc": 0.7107023411371238
+    },
+    "(0.1, 0.2]": {
+      "answers": 82.0,
+      "cv_accuracy": 0.6707317073170732,
+      "cv_auroc": 0.7660714285714285
+    },
+    "(0.2, 1.0]": {
+      "answers": 80.0,
+      "cv_accuracy": 0.8625,
+      "cv_auroc": 0.8832070707070707
+    }
+  },
+  "test_accuracy_old_labels": {
+    "baseline_notebook_04": 0.64,
+    "improved_notebook_06": 0.72
+  }
+}

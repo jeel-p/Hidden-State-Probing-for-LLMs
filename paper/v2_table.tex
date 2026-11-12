@@ -1,0 +1,32 @@
+\begin{tabular}{lcccccc}
+\toprule
+Probe & CV AUROC & CV acc. & Val acc. & Val AUROC & Test acc. & Test AUROC \\
+\midrule
+Neural net: DualPositionNet (new) & 0.847 & 76.6 & 81.0 & 0.874 & 79.7 & 0.877 \\
+Neural net: learned layer weights + MLP & 0.844 & 76.5 & 79.5 & 0.861 & 78.8 & 0.872 \\
+Best single layer (nested CV) & 0.833 & 75.4 & 79.2 & 0.849 & 76.6 & 0.869 \\
+One probe per layer 18-36, averaged & 0.833 & 74.7 & 78.8 & 0.841 & 77.6 & 0.876 \\
+Neural net: learned layer weights + linear & 0.832 & 75.4 & 79.0 & 0.847 & 75.8 & 0.869 \\
+Neural net: MLP, 1 hidden layer & 0.826 & 74.9 & 76.6 & 0.837 & 77.1 & 0.866 \\
+Last + mean, averaged & 0.823 & 74.0 & 77.6 & 0.832 & 76.6 & 0.869 \\
+RBF-kernel SVM & 0.821 & 70.0 & 76.4 & 0.838 & 77.5 & 0.859 \\
+Layer-averaged + uncertainty (stacked) & 0.816 & 73.6 & 76.4 & 0.837 & 75.0 & 0.862 \\
+Logistic regression (baseline) & 0.813 & 73.3 & 76.8 & 0.829 & 75.5 & 0.855 \\
+Layer-averaged state 18-36 & 0.813 & 73.3 & 76.8 & 0.829 & 75.5 & 0.855 \\
+Layer-averaged 18-36 + high-confidence labels & 0.811 & 72.7 & 77.1 & 0.816 & 77.6 & 0.859 \\
+Random forest & 0.808 & 72.4 & 75.4 & 0.813 & 78.7 & 0.865 \\
+Answer mean, layer-averaged 18-36 & 0.807 & 73.1 & 73.9 & 0.800 & 78.0 & 0.864 \\
+k-nearest neighbours & 0.806 & 72.7 & 72.5 & 0.806 & 76.5 & 0.839 \\
+Linear SVM & 0.802 & 71.6 & 76.6 & 0.816 & 80.0 & 0.857 \\
+Baseline: layer 16, last token & 0.796 & 72.0 & 71.5 & 0.764 & 75.8 & 0.843 \\
+Logistic regression, L1 (sparse) & 0.793 & 71.6 & 75.1 & 0.816 & 72.3 & 0.809 \\
+Layer-averaged, PCA 64 + LR & 0.792 & 71.6 & 74.6 & 0.795 & 73.4 & 0.845 \\
+Gradient boosting (PCA 64) & 0.792 & 70.7 & 72.7 & 0.799 & 76.3 & 0.835 \\
+Layer 16 + high-confidence labels only & 0.790 & 71.7 & 70.0 & 0.749 & 76.1 & 0.858 \\
+Gaussian naive Bayes (PCA 32) & 0.757 & 68.2 & 70.5 & 0.731 & 74.8 & 0.817 \\
+Layer-averaged, shrinkage LDA & 0.753 & 69.6 & 74.4 & 0.795 & 70.6 & 0.748 \\
+Layer-averaged, mass-mean probe & 0.747 & 67.7 & 68.0 & 0.767 & 72.4 & 0.826 \\
+Baseline: LR layer 16 (C picked on val) & 0.742 & 66.9 & 71.9 & 0.778 & 73.4 & 0.789 \\
+Uncertainty features alone & 0.615 & 59.4 & 64.2 & 0.650 & 57.6 & 0.596 \\
+\bottomrule
+\end{tabular}

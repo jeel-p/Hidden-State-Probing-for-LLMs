@@ -1,0 +1,210 @@
+{
+  "protocol": "same splits and CV folds as notebook 10 (one round of grouped 5-fold CV on train+val)",
+  "models": {
+    "LR, layers 18-36 avg.": {
+      "cv_auroc": 0.8134545451928986,
+      "cv_accuracy": 0.7323397913561848,
+      "val_accuracy": 0.7694915254237288,
+      "test_accuracy": 0.7546218487394958,
+      "test_auroc": 0.8544575852569584,
+      "cv_threshold": 0.58,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8134545451928986,
+        "cv_accuracy": 0.7400894187779433,
+        "val_accuracy": 0.7796610169491526,
+        "test_accuracy": 0.7815126050420168,
+        "test_auroc": 0.8544575852569584
+      }
+    },
+    "+ mean-token and question-mean states": {
+      "cv_auroc": 0.8200047776727266,
+      "cv_accuracy": 0.7332339791356185,
+      "val_accuracy": 0.7779661016949152,
+      "test_accuracy": 0.7714285714285715,
+      "test_auroc": 0.8493872898261613,
+      "cv_threshold": 0.5499999999999999,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8200047776727266,
+        "cv_accuracy": 0.7341281669150521,
+        "val_accuracy": 0.7813559322033898,
+        "test_accuracy": 0.7747899159663866,
+        "test_auroc": 0.8493872898261613
+      }
+    },
+    "+ sibling scores, stacked": {
+      "cv_auroc": 0.8148428764467929,
+      "cv_accuracy": 0.7368107302533532,
+      "val_accuracy": 0.7813559322033898,
+      "test_accuracy": 0.746218487394958,
+      "test_auroc": 0.8602878312909662,
+      "cv_threshold": 0.47,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8148428764467929,
+        "cv_accuracy": 0.7371087928464978,
+        "val_accuracy": 0.7593220338983051,
+        "test_accuracy": 0.7378151260504202,
+        "test_auroc": 0.8602878312909662
+      }
+    },
+    "Consistency features alone": {
+      "cv_auroc": 0.6393285211232136,
+      "cv_accuracy": 0.5958271236959761,
+      "val_accuracy": 0.6288135593220339,
+      "test_accuracy": 0.6336134453781512,
+      "test_auroc": 0.6616676166049207,
+      "cv_threshold": 0.5499999999999999,
+      "at_cv_threshold": {
+        "cv_auroc": 0.6393285211232136,
+        "cv_accuracy": 0.624441132637854,
+        "val_accuracy": 0.6372881355932203,
+        "test_accuracy": 0.6436974789915967,
+        "test_auroc": 0.6616676166049207
+      }
+    },
+    "DualPositionNet": {
+      "cv_auroc": 0.8461981525372752,
+      "cv_accuracy": 0.7612518628912072,
+      "val_accuracy": 0.811864406779661,
+      "test_accuracy": 0.7932773109243697,
+      "test_auroc": 0.8762467939583928,
+      "cv_threshold": 0.5599999999999999,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8461981525372752,
+        "cv_accuracy": 0.7639344262295082,
+        "val_accuracy": 0.8135593220338984,
+        "test_accuracy": 0.8,
+        "test_auroc": 0.8762467939583928
+      }
+    },
+    "DualPositionNet, 10 seeds": {
+      "cv_auroc": 0.8486344778162007,
+      "cv_accuracy": 0.7672131147540984,
+      "val_accuracy": 0.8135593220338984,
+      "test_accuracy": 0.7949579831932773,
+      "test_auroc": 0.8786928849624775,
+      "cv_threshold": 0.49999999999999994,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8486344778162007,
+        "cv_accuracy": 0.7672131147540984,
+        "val_accuracy": 0.8135593220338984,
+        "test_accuracy": 0.7949579831932773,
+        "test_auroc": 0.8786928849624775
+      }
+    },
+    "Stacked per-layer LR": {
+      "cv_auroc": 0.8376965573414266,
+      "cv_accuracy": 0.7540983606557377,
+      "val_accuracy": 0.7830508474576271,
+      "test_accuracy": 0.8168067226890756,
+      "test_auroc": 0.8823976441531299,
+      "cv_threshold": 0.42999999999999994,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8376965573414266,
+        "cv_accuracy": 0.7591654247391952,
+        "val_accuracy": 0.7677966101694915,
+        "test_accuracy": 0.7848739495798319,
+        "test_auroc": 0.8823976441531299
+      }
+    },
+    "LR, layer 25": {
+      "cv_auroc": 0.8420860441589353,
+      "cv_accuracy": 0.7639344262295082,
+      "val_accuracy": 0.7915254237288135,
+      "test_accuracy": 0.7647058823529411,
+      "test_auroc": 0.8693953643013206,
+      "cv_threshold": 0.5599999999999999,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8420860441589353,
+        "cv_accuracy": 0.7663189269746646,
+        "val_accuracy": 0.7966101694915254,
+        "test_accuracy": 0.7781512605042017,
+        "test_auroc": 0.8693953643013206
+      }
+    },
+    "Ensemble: DualPositionNet + stacked layers + layer 25": {
+      "cv_auroc": 0.8511136150721184,
+      "cv_accuracy": 0.7716840536512668,
+      "val_accuracy": 0.8,
+      "test_accuracy": 0.8016806722689076,
+      "test_auroc": 0.8834069535480195,
+      "cv_threshold": 0.51,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8511136150721184,
+        "cv_accuracy": 0.7734724292101341,
+        "val_accuracy": 0.8067796610169492,
+        "test_accuracy": 0.8050420168067227,
+        "test_auroc": 0.8834069535480195
+      }
+    },
+    "LoRA detector": {
+      "cv_auroc": 0.7905951080660643,
+      "cv_accuracy": 0.7287630402384501,
+      "val_accuracy": 0.8101694915254237,
+      "test_accuracy": 0.8235294117647058,
+      "test_auroc": 0.8854255723377982,
+      "cv_threshold": 0.5299999999999999,
+      "at_cv_threshold": {
+        "cv_auroc": 0.7905951080660643,
+        "cv_accuracy": 0.730849478390462,
+        "val_accuracy": 0.811864406779661,
+        "test_accuracy": 0.8285714285714286,
+        "test_auroc": 0.8854255723377982
+      }
+    },
+    "Ensemble + LoRA detector": {
+      "cv_auroc": 0.8409720333458531,
+      "cv_accuracy": 0.7791356184798808,
+      "val_accuracy": 0.8220338983050848,
+      "test_accuracy": 0.8285714285714286,
+      "test_auroc": 0.8932150660207085,
+      "cv_threshold": 0.49999999999999994,
+      "at_cv_threshold": {
+        "cv_auroc": 0.8409720333458531,
+        "cv_accuracy": 0.7791356184798808,
+        "val_accuracy": 0.8220338983050848,
+        "test_accuracy": 0.8285714285714286,
+        "test_auroc": 0.8932150660207085
+      }
+    }
+  },
+  "dual_by_judge_confidence": {
+    "low": {
+      "n": 151,
+      "cv_accuracy": 0.46357615894039733,
+      "cv_auroc": 0.48297029702970296
+    },
+    "medium": {
+      "n": 834,
+      "cv_accuracy": 0.617505995203837,
+      "cv_auroc": 0.6663596114984485
+    },
+    "high": {
+      "n": 2370,
+      "cv_accuracy": 0.8308016877637131,
+      "cv_auroc": 0.9069186765000445
+    }
+  },
+  "labels_by_question": {
+    "share_questions_all_same": 0.6455696202531646,
+    "sibling_label_majority_accuracy": 0.8458227848101266
+  },
+  "ensemble_lora_vs_dual_test": {
+    "accuracy_diff": 0.035,
+    "accuracy_diff_ci95": [
+      -0.005,
+      0.077
+    ],
+    "share_resamples_ahead": 0.95,
+    "auroc_diff": 0.017,
+    "auroc_diff_ci95": [
+      -0.003,
+      0.04
+    ],
+    "ensemble_lora_test_accuracy_ci95": [
+      0.782,
+      0.871
+    ],
+    "bootstrap": "2000 question-level resamples, seed 42"
+  },
+  "lora_note": "LoRA rows come from a run of the same lora_detector code (val: fit on train; CV: 5 folds; test: fit on train+val); compute_push.py --lora reruns it"
+}

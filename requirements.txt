@@ -1,0 +1,16 @@
+torch>=2.1
+transformers>=4.56
+accelerate>=0.30
+sentence-transformers>=2.7
+numpy
+pandas
+scikit-learn
+tqdm
+jupyter
+# only for re-grading answers with Claude (src/llm_judge.py)
+anthropic
+# only for the LoRA detector (paper/compute_push.py --lora)
+peft
+# only for rebuilding docs/How_It_Works.docx
+python-docx
+matplotlib

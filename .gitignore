@@ -1,0 +1,16 @@
+.venv/
+.env
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Large regenerable feature / activation arrays
+data/hidden_states/*.npy
+data/hidden_states_all_layers/
+data/features_extra/
+data/v2/features/
+data/v2/hidden_states/
+
+# Trained probe weights (rebuild from notebooks)
+models/*.joblib

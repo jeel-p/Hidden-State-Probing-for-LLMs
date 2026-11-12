@@ -1,0 +1,261 @@
+{
+  "model_name": "Qwen/Qwen2.5-3B-Instruct",
+  "input": "answer_last_token, mean over layers 18-36 (stacked for layer-weighting nets)",
+  "min_label_margin": 0.05,
+  "baseline": "Logistic regression (baseline)",
+  "protocol": "5-fold CV on train+val grouped by question, repeated 3x; best grid setting by CV; test once per model",
+  "models": [
+    {
+      "model": "Linear SVM",
+      "family": "linear",
+      "setting": "C=0.001",
+      "cv_auroc": 0.7114222222222222,
+      "cv_std": 0.00813897800482119,
+      "cv_auroc_all_labels": 0.7001111111111111,
+      "test_auroc": 0.6947674418604651,
+      "test_ci95": [
+        0.56,
+        0.811
+      ],
+      "cv_vs_baseline": 0.002851851851851772,
+      "test_vs_baseline": -0.022529069767441845,
+      "test_diff_ci95": [
+        -0.06,
+        0.015
+      ],
+      "P(better than baseline)": 0.1075,
+      "seconds": 0.45030879974365234
+    },
+    {
+      "model": "Neural net: MLP, 1 hidden layer",
+      "family": "neural",
+      "setting": "h=256,epochs=150",
+      "cv_auroc": 0.709262962962963,
+      "cv_std": 0.002651319002952739,
+      "cv_auroc_all_labels": 0.689574074074074,
+      "test_auroc": 0.7492732558139534,
+      "test_ci95": [
+        0.628,
+        0.851
+      ],
+      "cv_vs_baseline": 0.000692592592592578,
+      "test_vs_baseline": 0.03197674418604646,
+      "test_diff_ci95": [
+        -0.032,
+        0.11
+      ],
+      "P(better than baseline)": 0.825,
+      "seconds": 43.44710969924927
+    },
+    {
+      "model": "Logistic regression (baseline)",
+      "family": "linear",
+      "setting": "C=0.01",
+      "cv_auroc": 0.7085703703703704,
+      "cv_std": 0.0075211051926971865,
+      "cv_auroc_all_labels": 0.6839555555555554,
+      "test_auroc": 0.717296511627907,
+      "test_ci95": [
+        0.588,
+        0.833
+      ],
+      "cv_vs_baseline": 0.0,
+      "test_vs_baseline": 0.0,
+      "test_diff_ci95": [
+        0.0,
+        0.0
+      ],
+      "P(better than baseline)": 0.0,
+      "seconds": 0.2584412097930908
+    },
+    {
+      "model": "Neural net: learned layer weights + linear",
+      "family": "neural",
+      "setting": "epochs=200",
+      "cv_auroc": 0.7075481481481481,
+      "cv_std": 0.005855160808490094,
+      "cv_auroc_all_labels": 0.6871999999999999,
+      "test_auroc": 0.7143895348837209,
+      "test_ci95": [
+        0.582,
+        0.83
+      ],
+      "cv_vs_baseline": -0.0010222222222222577,
+      "test_vs_baseline": -0.0029069767441860517,
+      "test_diff_ci95": [
+        -0.034,
+        0.031
+      ],
+      "P(better than baseline)": 0.4065,
+      "seconds": 95.57155704498291
+    },
+    {
+      "model": "RBF-kernel SVM",
+      "family": "kernel",
+      "setting": "C=3.0",
+      "cv_auroc": 0.7006592592592593,
+      "cv_std": 0.0030214232785655474,
+      "cv_auroc_all_labels": 0.6891037037037037,
+      "test_auroc": 0.7609011627906977,
+      "test_ci95": [
+        0.643,
+        0.865
+      ],
+      "cv_vs_baseline": -0.007911111111111091,
+      "test_vs_baseline": 0.043604651162790775,
+      "test_diff_ci95": [
+        -0.017,
+        0.112
+      ],
+      "P(better than baseline)": 0.921,
+      "seconds": 0.5826411247253418
+    },
+    {
+      "model": "Neural net: learned layer weights + MLP",
+      "family": "neural",
+      "setting": "h=64,epochs=100",
+      "cv_auroc": 0.6999037037037037,
+      "cv_std": 0.001953730910816361,
+      "cv_auroc_all_labels": 0.6841333333333334,
+      "test_auroc": 0.7252906976744186,
+      "test_ci95": [
+        0.595,
+        0.837
+      ],
+      "cv_vs_baseline": -0.008666666666666711,
+      "test_vs_baseline": 0.007994186046511587,
+      "test_diff_ci95": [
+        -0.048,
+        0.064
+      ],
+      "P(better than baseline)": 0.6225,
+      "seconds": 57.41111707687378
+    },
+    {
+      "model": "Random forest",
+      "family": "trees",
+      "setting": "max_features=0.1",
+      "cv_auroc": 0.6956814814814815,
+      "cv_std": 0.0014231864015678644,
+      "cv_auroc_all_labels": 0.6812888888888889,
+      "test_auroc": 0.7405523255813954,
+      "test_ci95": [
+        0.614,
+        0.849
+      ],
+      "cv_vs_baseline": -0.01288888888888895,
+      "test_vs_baseline": 0.023255813953488413,
+      "test_diff_ci95": [
+        -0.066,
+        0.114
+      ],
+      "P(better than baseline)": 0.692,
+      "seconds": 10.46976613998413
+    },
+    {
+      "model": "Logistic regression, L1 (sparse)",
+      "family": "linear",
+      "setting": "C=0.1",
+      "cv_auroc": 0.6798518518518518,
+      "cv_std": 0.013141012148017713,
+      "cv_auroc_all_labels": 0.6356888888888889,
+      "test_auroc": 0.6620639534883721,
+      "test_ci95": [
+        0.526,
+        0.784
+      ],
+      "cv_vs_baseline": -0.028718518518518588,
+      "test_vs_baseline": -0.05523255813953487,
+      "test_diff_ci95": [
+        -0.132,
+        0.018
+      ],
+      "P(better than baseline)": 0.076,
+      "seconds": 0.33324503898620605
+    },
+    {
+      "model": "k-nearest neighbours",
+      "family": "instance",
+      "setting": "k=31",
+      "cv_auroc": 0.6613555555555556,
+      "cv_std": 0.00500630055704712,
+      "cv_auroc_all_labels": 0.6487851851851851,
+      "test_auroc": 0.720203488372093,
+      "test_ci95": [
+        0.592,
+        0.833
+      ],
+      "cv_vs_baseline": -0.04721481481481482,
+      "test_vs_baseline": 0.0029069767441860517,
+      "test_diff_ci95": [
+        -0.096,
+        0.102
+      ],
+      "P(better than baseline)": 0.524,
+      "seconds": 0.19211888313293457
+    },
+    {
+      "model": "Gradient boosting (PCA 64)",
+      "family": "trees",
+      "setting": "lr=0.03",
+      "cv_auroc": 0.654274074074074,
+      "cv_std": 0.011885133824895101,
+      "cv_auroc_all_labels": 0.6399111111111111,
+      "test_auroc": 0.7238372093023255,
+      "test_ci95": [
+        0.601,
+        0.831
+      ],
+      "cv_vs_baseline": -0.0542962962962964,
+      "test_vs_baseline": 0.006540697674418561,
+      "test_diff_ci95": [
+        -0.112,
+        0.131
+      ],
+      "P(better than baseline)": 0.5555,
+      "seconds": 4.806059837341309
+    },
+    {
+      "model": "Gaussian naive Bayes (PCA 32)",
+      "family": "probabilistic",
+      "setting": "",
+      "cv_auroc": 0.6323185185185185,
+      "cv_std": 0.02013480767501246,
+      "cv_auroc_all_labels": 0.6300222222222223,
+      "test_auroc": 0.6787790697674418,
+      "test_ci95": [
+        0.548,
+        0.79
+      ],
+      "cv_vs_baseline": -0.0762518518518519,
+      "test_vs_baseline": -0.03851744186046513,
+      "test_diff_ci95": [
+        -0.153,
+        0.074
+      ],
+      "P(better than baseline)": 0.2505,
+      "seconds": 0.2609982490539551
+    }
+  ],
+  "learned_layer_weights": {
+    "L18": 0.0003462638414930552,
+    "L19": 0.0002528327750042081,
+    "L20": 0.00026232030359096825,
+    "L21": 0.000344846019288525,
+    "L22": 0.0015375600196421146,
+    "L23": 0.00036484826705418527,
+    "L24": 0.00013128170394338667,
+    "L25": 0.00017809875134844333,
+    "L26": 0.00020792882423847914,
+    "L27": 0.0002691345871426165,
+    "L28": 0.0007311703520826995,
+    "L29": 0.23064641654491425,
+    "L30": 0.00416578771546483,
+    "L31": 0.0013594659976661205,
+    "L32": 0.06144048273563385,
+    "L33": 0.6203972101211548,
+    "L34": 0.012221437878906727,
+    "L35": 0.04284605756402016,
+    "L36": 0.022296862676739693
+  }
+}
